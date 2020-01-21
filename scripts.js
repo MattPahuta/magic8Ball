@@ -1,4 +1,4 @@
-// jQuery - initiate 
+
 $(document).ready(function() {
   var questionSide = 'https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/8side.png';
   var answerSide = ' https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/answerside.png';
@@ -13,19 +13,15 @@ $(document).ready(function() {
     // More succinct than above:
     var randomAnswer = Math.floor(Math.random() * this.answersArray.length);   
     var answer = this.answersArray[randomAnswer];
-    
     // change to answer side image before showing the answer text
     $('#8ball').attr('src', answerSide);
-
     $('#answer').text(answer);
-    
-    console.log(question);
-    console.log(answer);
-
+    // Debugging console.logs:
+    // console.log(question);
+    // console.log(answer);
   };
   // Hide answer upon page load
   $('#answer').hide();
-
 
   var onClick = function() {
     $('#8ball').effect('shake');
@@ -36,7 +32,6 @@ $(document).ready(function() {
       var question = prompt("Ask a Yes/No Question!");
       magic8Ball.askQuestion(question);
     }, 500);
-
   };
 
   $('#questionButton').click(onClick);
